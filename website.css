@@ -67,7 +67,7 @@
     display: block;
 }
 body {
-    background-image: url('office\ pix.jpg');
+    background-image: url('office pix.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -128,7 +128,7 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem 0;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -226,5 +226,14 @@ footer {
     .navbar ul li a {
         font-size: 14px; /* Reduce font size for smaller screens */
         padding: 10px; /* Adjust padding */
+    }
+    .dropdown-menu {
+        position: static; /* Ensure dropdown is visible on mobile */
+        display: none; /* Hide dropdown by default */
+        width: 100%; /* Make dropdown take full width */
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block; /* Show dropdown on hover */
     }
 }
