@@ -1,20 +1,24 @@
 .navbar {
     list-style-type: none;
-    height: 80px;
+    height: auto;
     width: 100%;
-    background-color:
     display: flex;
-    justify-content: 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     padding: 0 5%;
 }
 .navbar ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
     
 }
 .navbar ul li {
-    padding: 10px 30px;
+    padding: 10px 15px;
     position: relative;
 }
 .navbar ul li a {
@@ -23,7 +27,7 @@
     display: block;
     padding: 10px 20px;
     transition: background-color 0.3s ease;
-    font-size: 18px;
+    font-size: 16px;
 }
 .navbar ul li a:hover {
     background-color: #111;
@@ -142,8 +146,85 @@ footer {
     gap: 0px; /* Add spacing between the icons */
     margin-top: 1rem; /* Add some space above the icons */
 }
+.navbar {
+    list-style-type: none;
+    height: auto; /* Allow the height to adjust dynamically */
+    width: 100%;
+    background-color: #111; /* Add a background color */
+    display: flex;
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+    padding: 0 5%; /* Add padding for spacing */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap */
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Ensure the navbar spans the full width */
+}
+
+.navbar ul li {
+    padding: 10px 15px; /* Adjust padding for smaller screens */
+    position: relative;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    font-size: 16px; /* Adjust font size for smaller screens */
+}
+
+.navbar ul li a:hover {
+    background-color: #575757;
+}
+
+/* Dropdown menu styles */
+.menu {
+    display: none; /* Hide the dropdown by default */
+    position: absolute;
+    top: 100%; /* Position it below the parent item */
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.dropdown:hover .menu {
+    display: block; /* Show the dropdown on hover */
+}
+
+/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
-    body {
-        overflow-x: hidden; /* Prevent horizontal scrolling */
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: flex-start; /* Align items to the left */
+        padding: 0 1rem; /* Reduce padding */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
+        width: 100%; /* Ensure the navbar spans the full width */
+    }
+
+    .navbar ul li {
+        padding: 10px 0; /* Add spacing between items */
+        width: 100%; /* Make each item take the full width */
+    }
+
+    .navbar ul li a {
+        font-size: 14px; /* Reduce font size for smaller screens */
+        padding: 10px; /* Adjust padding */
     }
 }
