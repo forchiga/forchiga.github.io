@@ -75,8 +75,10 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     font-family: playfair, sans-serif;
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
 }
 .hero {
     display: flex;
@@ -84,7 +86,8 @@ body {
     align-items: center;
     text-align: center;
     padding: 6rem 1rem;
-    
+    margin: 0;
+    flex: 1;
 }
 .hero .stats {
     margin-bottom: 1rem;
@@ -128,7 +131,7 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem 0;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
@@ -206,6 +209,15 @@ footer {
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
+    body {
+        min-height: 100vh; /* Ensure body takes full height */
+    }
+    .hero {
+        padding: 4rem 1rem; /* Adjust padding for smaller screens */
+    }
+    .footer {
+        padding: 1rem 0; /* Adjust footer padding */
+    }
     .navbar {
         flex-direction: column; /* Stack navbar items vertically */
         align-items: flex-start; /* Align items to the left */
@@ -236,4 +248,10 @@ footer {
     .dropdown:hover .dropdown-menu {
         display: block; /* Show dropdown on hover */
     }
+}
+html, body {
+    height: 100%; /* Ensure both html and body take up the full height of the viewport */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
