@@ -2,35 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>calculator</title>
-    <link rel="stylesheet" href="calculator.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
-<header><h1>&#128293;</h1></header>
+<header><h1></h1></header>
 <body>
-   <div class="calculator">
-    <input type="text" id="display" disabled>
-    <div class="buttons">
-        <button class="btn-c" onclick="clearDisplay()">C</button>
-        <button onclick="appendToDisplay('7')">7</button>
-        <button onclick="appendToDisplay('8')">8</button>
-        <button onclick="appendToDisplay('9')">9</button>
-        <button class="btn-sum" onclick="appendToDisplay('/')">/</button>
+    <div class="navbar">
+        <nav>
+        <ul>
+            <li class="dropdown">
+                <a href="#">Services <i class="fa-solid fa-caret-down"></i></a>
+                <div class="dropdown-menu">
+                    <ul class="">
+                        <li class="menu"><a href="#">Web Development</a></li>
+                        <li class="menu"><a href="#">App Development</a></li>
+                        <li class="menu"><a href="#">SEO Optimization</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+        </ul>
+    </nav>
+    </div>
+    <section class="hero">
+        <div class="stats">
+            <p><i class="fas fa-briefcase"></i> 100+ <br> Satisfied clients</p>
+            <span class="line"></span>
+            <p><i class="fas fa-briefcase"></i> 10+ <br> years in industry</p>
+            </div>
+            <h1>HR Solutions Built To Move <br> your Business Fortward</h1>
+            <p>Let us handle the heavy lifting-payroll, staffing, compliance, and more, so you can scale with confidence.</p>
+            <button class="btn">Contact us</button> 
+            <div class="icon-container">
+            <i id="icon" class="icon fa-brands fa-square-whatsapp"></i> 
+        <i id="icon" class="icon fa-brands fa-x-twitter"></i>
+    </div> 
+    </section>
+    
         
-        <button onclick="appendToDisplay('4')">4</button>
-        <button onclick="appendToDisplay('5')">5</button>
-        <button onclick="appendToDisplay('6')">6</button>
-        <button class="btn-sum" onclick="appendToDisplay('*')">*</button>
-        
-        <button onclick="appendToDisplay('1')">1</button>
-        <button onclick="appendToDisplay('2')">2</button>
-        <button onclick="appendToDisplay('3')">3</button>
-        <button class="btn-sum" onclick="appendToDisplay('-')">-</button>
-        
-        <button onclick="appendToDisplay('0')">0</button>
-        <button onclick="calculateResult()">=</button>
-        <button class="btn-sum" onclick="appendToDisplay('+')">+</button>
-   </div>
-   <script src="calculator.js"></script>
+    <footer>
+        &copy; 2025 Fortune. all rights reserved.
+    </footer>
 </body>
 </html>
