@@ -187,16 +187,26 @@ nav a.active {
 }
 
 @media screen and (max-width: 767px) {
+    /* Keep the nav horizontal on small screens and allow horizontal scroll when needed */
     nav ul {
-        flex-direction: column;
-        border-radius: 8px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        border-radius: 12px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 6px;
+        gap: 6px;
+    }
+    nav li {
+        flex: 0 0 auto;
     }
     nav li:not(:last-child) > a {
         border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.04);
+        border-bottom: none;
     }
     nav a {
-        padding: 12px 14px;
+        padding: 10px 12px;
+        white-space: nowrap;
     }
 }
 .rating {
@@ -278,17 +288,35 @@ h3 {
 }
 /* Mobile / small screens */
 @media screen and (max-width: 767px) {
+    /* Header: keep items on one row, make title responsive/truncate if necessary */
     .header-container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        flex-wrap: nowrap;
     }
-    nav ul {
-        flex-direction: column;
+    .prof {
+        flex: 0 0 auto;
+        margin-right: 8px;
+    }
+    h1 {
+        flex: 1 1 auto;
+        margin: 0;
+        text-align: center;
+        font-size: clamp(18px, 5vw, 20px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .header-container form {
+        flex: 0 0 auto;
+        margin-left: 8px;
     }
     .search-bar {
-        width: 100%;
-        margin: 10px 0 0 0;
+        min-width: 100px;
     }
+    /* Content layout tweaks */
     .content, .sidebar {
         display: block;
         width: 100%;
@@ -314,7 +342,6 @@ h3 {
         width: 100%;
         justify-content: center;
     }
-    h1 { margin-left: 0; }
 }
 @media screen and (min-width: 768px) {
   .column {
