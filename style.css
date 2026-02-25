@@ -12,7 +12,9 @@
     color: white;
     padding: 8px 12px;
     border-radius: 999px;
-    min-width: 160px;
+    min-width: 0; /* allow shrinking */
+    max-width: 40vw; /* prevent it from growing too large */
+    flex: 1 1 auto; /* allow flex container to shrink/grow */
     outline: none;
     box-sizing: border-box;
     transition: box-shadow .12s ease, background .12s ease;
@@ -27,6 +29,7 @@
     border-radius: 999px;
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.04);
+    flex: 0 1 auto; /* allow the form to shrink on small screens */
 }
 .header-container form button {
     background: linear-gradient(90deg,#ff6b6b,#ff8e53);
@@ -38,6 +41,7 @@
     font-weight: 600;
     box-shadow: 0 6px 14px rgba(0,0,0,0.35);
     transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    flex: 0 0 auto; /* keep the button fixed size */
 }
 .header-container form button:hover {
     transform: translateY(-2px);
@@ -341,6 +345,34 @@ h3 {
     .download-file {
         width: 100%;
         justify-content: center;
+    }
+}
+/* Very narrow screens: allow header to wrap so elements don't overflow horizontally */
+@media screen and (max-width: 420px) {
+    .header-container {
+        flex-wrap: wrap;
+        gap: 6px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    h1 {
+        order: 1;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        white-space: normal;
+        overflow: visible;
+    }
+    .header-container form {
+        order: 2;
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 6px;
+    }
+    .search-bar {
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 @media screen and (min-width: 768px) {
