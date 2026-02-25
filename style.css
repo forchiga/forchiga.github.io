@@ -254,7 +254,7 @@ h2 {
 .download-file {
     color: rgb(191, 191, 191);
     text-decoration: none;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
@@ -262,9 +262,11 @@ h2 {
     border: 1px solid #1a1a1a;
     background-color: rgba(0, 0, 0, 0.5);
     width: auto;
-    padding: auto;
+    padding: 8px 12px;
     margin: 5px auto;
-    height: 40px;
+    height: auto;
+    max-width: 100%;
+    word-break: break-word;
 }
 .content {
     width: 100%;
@@ -386,6 +388,24 @@ h3 {
     .download-file {
         width: 100%;
         justify-content: center;
+    }
+    /* Ensure label and button don't overflow on mobile */
+    .NOC-Label {
+        margin-left: 0;
+        position: static;
+        top: 0;
+        box-sizing: border-box;
+    }
+    .noc {
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    .download-file {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        height: auto;
     }
 }
 /* Very narrow screens: allow header to wrap so elements don't overflow horizontally */
