@@ -59,6 +59,26 @@
     color:white;
     flex-wrap: wrap;
 }
+
+/* Search form + toggle button (desktop shows full input; mobile can collapse) */
+.search-form {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+.search-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 6px;
+    cursor: pointer;
+}
+.search-submit {
+    display: inline-flex;
+    align-items: center;
+}
 h1 {
     margin-left: 10px;
     margin: 0;
@@ -325,6 +345,21 @@ h3 {
     .search-bar {
         min-width: 100px;
         max-width: calc(100% - 60px);
+    }
+    /* Mobile: hide input by default and show a toggle icon */
+    .search-toggle {
+        display: inline-flex;
+    }
+    .search-submit {
+        display: none;
+    }
+    .search-form .search-bar {
+        display: none;
+    }
+    .search-form.open .search-bar {
+        display: inline-block;
+        width: 140px;
+        max-width: 55vw;
     }
     /* Content layout tweaks */
     .content, .sidebar {
