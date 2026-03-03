@@ -58,7 +58,7 @@ body {
     margin: 0;
 }
 .hero {
-    background-image: url("../images/happy asian.jpg");
+    background-image: url("happy asian.jpg");
     height: 90vh;
     width: 100%;
     background-position: top 25% right 0;
@@ -82,7 +82,7 @@ body {
     margin-top: 0;
 }
 .hero button {
-    background-image: url("../images/button.png");
+    background-image: url("button.png");
     background-color: transparent;
     color: #088178;
     border: 0;
@@ -143,4 +143,5 @@ p {
     .hero { height: 50vh; }
     .hero h1 { font-size: 1.25rem; }
     .hero button { padding: 8px 40px 8px 30px; }
+
 }
