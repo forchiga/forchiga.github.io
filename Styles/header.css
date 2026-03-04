@@ -1,3 +1,7 @@
+/* global reset to prevent unwanted overflow */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: hidden; }
+
 .header {
     background-color: #E3e6f3;          /* keep light header if that's the design */
     display: flex;
@@ -75,7 +79,13 @@ body {
 }
 .hero-content{
  padding: 0 80px;
+ max-width: 90vw;
+ width: 100%;
 }
+
+/* make the paragraph flexibly sized */
+.disc-p1 { max-width: 500px; width: 100%; }
+
 .hero h4{
     margin-bottom: 0;
 }
@@ -109,6 +119,20 @@ body {
         padding: 10px 1rem;
         position: relative;
     }
+    .section-p1 { padding: 40px 20px; }
+    .hero {
+        height: 60vh;
+        background-position: center center;
+        align-items: center;           /* center text on mobile */
+        text-align: center;
+    }
+    .hero-content {
+        padding: 0 20px;
+    }
+    .hero h4 { font-size: 1rem; width:100%; }
+    .hero h1 { font-size: 1.5rem; width:100%; }
+    .hero h2 { font-size: 1.25rem; width:100%; }
+
     .logo {
         height: 40px;
         margin: 0 auto 8px;
@@ -122,12 +146,15 @@ body {
         font-size: 24px;
         cursor: pointer;
         color: #1a1a1a;
+        z-index: 1000; /* ensure it's above the nav when expanded */
     }
     .navbar {
         display: none;            /* hidden by default on mobile */
         flex-direction: column;
         background-color: #E3e6f3;
         width: 100%;
+        position: relative; /* keep below toggle */
+        z-index: 500;
     }
     .navbar.open {
         display: flex;
@@ -161,6 +188,7 @@ body {
     .hero { height: 50vh; }
     .hero h1 { font-size: 1.25rem; }
     .hero button { padding: 8px 40px 8px 30px; }
+    .section-p1 { padding: 40px 10px; }
 }
 .section-p1 {
     padding: 40px 80px;
